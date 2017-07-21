@@ -9,6 +9,6 @@ class Index
 {
     public function index()
     {
-        dump(Cache::get('site_index'));
+        echo '123';
     }
 }
