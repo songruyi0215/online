@@ -15,6 +15,6 @@ class User extends Model{
      * 测试方法
     */
     public function setUser($nickname,$email){
-       echo '123';
+       User::get(1);
     }
 }
