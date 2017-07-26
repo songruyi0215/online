@@ -9,9 +9,32 @@ use think\response\Json;
 
 class Index
 {
+    /*
+    *添加用户
+    */
     public function index()
     {
-        dd('123');
-        echo '123';
+        $map['nickname']=input('nickname');
+        $map['email']=input('email');
+        $user=new User();
+        $result=$user->setUser($map);
+        dump($result);
+    }
+    /*
+     * 更新用户
+     * */
+    public function updateUser(){
+        $id=input('id',0);
+        $map['nickname']=input('nickname','');
+        $map['email']=input('email','');
+        $user=new User();
+        $result=$user->updateUser($id,$map);
+        dump($result);
+    }
+    public function deleteUser(){
+        $id=1;
+        $user=new User();
+        $result=$user->deleteUser($id);
+        dump($result);
     }
 }
